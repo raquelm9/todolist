@@ -1,6 +1,7 @@
-const express = require('express')
-const app = express()
 const routes = require("./config/routes")
+const express = require('express')
+var cors = require('cors')
+const app = express()
 const port = 8080
 
 
@@ -10,6 +11,7 @@ const todo = [{
 
 }]
 
+app.use(cors())
 app.use(express.json())
 
 app.get(routes.todo, function (req, res) {
